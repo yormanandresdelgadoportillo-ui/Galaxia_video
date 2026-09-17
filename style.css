@@ -1,0 +1,615 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #02020a;
+    color: white;
+}
+
+/* =========================
+   UNIVERSO
+========================= */
+
+#universo {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #17113a 0%,
+            #090719 35%,
+            #02020a 75%,
+            #000000 100%
+        );
+}
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px);
+
+    background-size: 90px 90px;
+
+    animation: starsMove 35s linear infinite;
+
+    opacity: 0.7;
+}
+
+.stars2 {
+    background-size: 140px 140px;
+    animation-duration: 50s;
+    opacity: 0.4;
+}
+
+.stars3 {
+    background-size: 200px 200px;
+    animation-duration: 70s;
+    opacity: 0.25;
+}
+
+@keyframes starsMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-90px, 90px);
+    }
+}
+
+/* =========================
+   GALAXIA
+========================= */
+
+.galaxy {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    animation: galaxyFloat 8s ease-in-out infinite;
+
+    transition:
+        transform 2s ease,
+        opacity 2s ease;
+}
+
+@keyframes galaxyFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            rotate(180deg)
+            scale(1.04);
+    }
+}
+
+/* CENTRO */
+
+.galaxy-core {
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #d9c8ff 15%,
+            #8b5cff 35%,
+            #4822a8 55%,
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 30px #9c6cff,
+        0 0 80px #653bd1,
+        0 0 150px #3a1d80;
+
+    animation: corePulse 3s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.18);
+    }
+}
+
+/* =========================
+   ÓRBITAS
+========================= */
+
+.orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border: 1px solid rgba(190, 160, 255, 0.35);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.orbit span {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px #9c6cff;
+}
+
+.orbit1 {
+    width: 220px;
+    height: 100px;
+
+    animation: orbitRotate1 7s linear infinite;
+}
+
+.orbit1 span {
+    top: -6px;
+    left: 50%;
+}
+
+.orbit2 {
+    width: 300px;
+    height: 140px;
+
+    animation: orbitRotate2 11s linear infinite reverse;
+}
+
+.orbit2 span {
+    right: -6px;
+    top: 50%;
+}
+
+.orbit3 {
+    width: 390px;
+    height: 180px;
+
+    animation: orbitRotate3 16s linear infinite;
+}
+
+.orbit3 span {
+    bottom: -6px;
+    left: 50%;
+}
+
+@keyframes orbitRotate1 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+@keyframes orbitRotate2 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+@keyframes orbitRotate3 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+/* =========================
+   PLANETAS
+========================= */
+
+.planet {
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.planet1 {
+    width: 22px;
+    height: 22px;
+
+    top: 30px;
+    left: 190px;
+
+    background: #6d8cff;
+
+    box-shadow:
+        0 0 15px #6d8cff;
+}
+
+.planet2 {
+    width: 14px;
+    height: 14px;
+
+    right: 40px;
+    top: 180px;
+
+    background: #d98aff;
+
+    box-shadow:
+        0 0 15px #d98aff;
+}
+
+.planet3 {
+    width: 18px;
+    height: 18px;
+
+    left: 80px;
+    bottom: 80px;
+
+    background: #9fffff;
+
+    box-shadow:
+        0 0 15px #9fffff;
+}
+
+/* =========================
+   PANTALLAS
+========================= */
+
+.screen {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+    z-index: 10;
+}
+
+.screen.active {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: scale(1);
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.small-text {
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color: #c6b8ff;
+
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(45px, 12vw, 90px);
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 20px rgba(180, 150, 255, 0.8),
+        0 0 50px rgba(130, 80, 255, 0.4);
+}
+
+.subtitle {
+    font-size: 18px;
+
+    color: #ddd6ff;
+
+    margin-top: 10px;
+
+    margin-bottom: 35px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    background:
+        rgba(30, 20, 70, 0.55);
+
+    color: white;
+
+    padding: 15px 30px;
+
+    border-radius: 40px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 20px rgba(140, 100, 255, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 35px rgba(160, 120, 255, 0.6);
+
+    background:
+        rgba(80, 50, 150, 0.6);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   MENSAJE
+========================= */
+
+.message-box,
+.final-box {
+
+    max-width: 600px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(10, 7, 30, 0.65);
+
+    border:
+        1px solid rgba(190, 160, 255, 0.25);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 50px rgba(80, 50, 150, 0.2);
+}
+
+.message-box h2,
+.final-box h2 {
+
+    font-size: clamp(30px, 7vw, 55px);
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+.message-box p:not(.small-text),
+.final-box p {
+
+    color: #ddd8f0;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.heart {
+
+    font-size: 70px;
+
+    color: #ff8fcf;
+
+    text-shadow:
+        0 0 20px #ff8fcf,
+        0 0 50px #b83c87;
+
+    animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.signature {
+    color: #cbb8ff !important;
+
+    letter-spacing: 3px;
+}
+
+/* =========================
+   MODO CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    #universo {
+        min-height: 100vh;
+    }
+
+    .galaxy {
+
+        width: 300px;
+        height: 300px;
+    }
+
+    .galaxy-core {
+
+        width: 70px;
+        height: 70px;
+    }
+
+    .orbit1 {
+
+        width: 160px;
+        height: 75px;
+    }
+
+    .orbit2 {
+
+        width: 220px;
+        height: 105px;
+    }
+
+    .orbit3 {
+
+        width: 280px;
+        height: 135px;
+    }
+
+    h1 {
+
+        font-size: 48px;
+    }
+
+    .subtitle {
+
+        font-size: 16px;
+    }
+
+    .message-box,
+    .final-box {
+
+        width: 92%;
+
+        padding: 25px 20px;
+    }
+
+    .message-box h2,
+    .final-box h2 {
+
+        font-size: 32px;
+    }
+
+    .message-box p:not(.small-text),
+    .final-box p {
+
+        font-size: 15px;
+    }
+
+    button {
+
+        min-height: 48px;
+
+        padding: 13px 25px;
+    }
+}
